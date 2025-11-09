@@ -9,7 +9,7 @@ END = '\033[0m'
 def greeting():
     def greetingprinting():
         greetingvocab=["Hi","Hello", "What's up","How are you doing" ]
-        randomgreeting = random.choice(greetingvocab)
+        randomgreeting = random.choice(BOLD+greetingvocab+END)
         print(randomgreeting)
     
     if "hi" in userinput:
@@ -61,13 +61,10 @@ def joke():
 
     if "joke" in userinput:
         jokeprinting()
-        
     if "Joke" in userinput:
         jokeprinting()
-        
     if "Jokes" in userinput:
         jokeprinting()
-        
     if "jokes" in userinput:
         jokeprinting()
         
@@ -100,24 +97,23 @@ def feelings():
         
 
 def iam():
-    def iamprinting():
-        splitedinput=userinput.split()
-        
-        if "I" in splitedinput:
-            splitedinput.remove("I")
-        if "i" in splitedinput:
-            splitedinput.remove("i")
-        if "am" in splitedinput:
-            splitedinput.remove("am")
-        if "My" in splitedinput:
-            splitedinput.remove("My")
-        if "my" in splitedinput:
-            splitedinput.remove("my")
-        if "name" in splitedinput:
-            splitedinput.remove("name")
-        if "is" in splitedinput:
-            splitedinput.remove("is")
-        print(BOLD+splitedinput+END)
+    splitedinput=""
+    splitedinput=userinput.split()
+    if "I" in splitedinput:
+        splitedinput.remove("I")
+    if "i" in splitedinput:
+        splitedinput.remove("i")
+    if "am" in splitedinput:
+        splitedinput.remove("am")
+    if "My" in splitedinput:
+        splitedinput.remove("My")
+    if "my" in splitedinput:
+        splitedinput.remove("my")
+    if "name" in splitedinput:
+        splitedinput.remove("name")
+    if "is" in splitedinput:
+        splitedinput.remove("is")
+    print(BOLD+splitedinput+END)
         
  
 
@@ -129,13 +125,13 @@ randomgreet = random.choice(startgreetings)
 print(BOLD+randomgreet+END)
 
 while True:
-    userinput=input()
+    userinput=input("Type here")
     greeting()
     clock()
     who()
     joke()
     feelings()
-    iam()
+ 
 
 
 
