@@ -1,4 +1,4 @@
-#import libraries, set up ANSI escape and varible 
+#import libraries, set up ANSI escape and variable
 import random
 import time
 from datetime import datetime
@@ -32,28 +32,35 @@ print(BOLD+randomgreet+END)
 
 while go==True:
 #var setup
+    userinput=input()
     output=""
     itisajoke=False
+    idk=False
+
+#leave
+    checkleavelist=0
+    leavelist=["leave","exit","sleep","goodbye","bye","Bye","Sleep","shut","Shut"]
+    for x in leavelist:
+        checkleave=leavelist[checkleavelist]
+        if checkleave in userinput:
+            output="Bye and have a nice day!"
+            go=False
+        checkleavelist=checkleavelist+1
+
 #greetings
-    userinput=input()
     def greetingprinting():
         greetingvocab=["Hi","Hello", "What's up","How are you doing" ]
         randomgreeting = random.choice(greetingvocab)
         output=randomgreeting
         return output
     
-    if "hi" in userinput:
-        output=greetingprinting()
-    elif "Hi" in userinput:
-        output=greetingprinting()
-    elif "Hello" in userinput:
-        output=greetingprinting()
-    elif "hello" in userinput:
-        output=greetingprinting()
-    elif "Hey" in userinput:
-        output=greetingprinting()
-    elif "hey" in userinput:
-        output=greetingprinting()
+    checkgreetinglist=0
+    greetinglist=["hi","Hi","hello","Hello","Hey","hey",]
+    for x in greetinglist:
+        checkgreeting=greetinglist[checkgreetinglist]
+        if checkgreeting in userinput:
+             output=greetingprinting()
+        checkgreetinglist=checkgreetinglist+1
 
 #clock
     def clockprint():
@@ -62,10 +69,13 @@ while go==True:
         output="It is currently"+currenttime +"."
         return output
 
-    if "time" in userinput:
-        output=clockprint()
-    elif "Time" in userinput:
-        output=clockprint()
+    checkclocklist=0
+    clocklist=["time","time"]
+    for x in clocklist:
+        checkclock=clocklist[checkclocklist]
+        if checkclock in userinput:
+             output=clockprint()
+        checkclocklist=checkclocklist+1
 
 #feeling
     def feelingsprinting():
@@ -73,7 +83,7 @@ while go==True:
         feelingvocab2=["thanks", "how about you","hope your doing well too."]
         randomfeeling1 = random.choice(feelingvocab)
         randomfeeling2 = random.choice(feelingvocab2)
-        output=randomfeeling1,", ",randomfeeling2
+        output=randomfeeling1+", "+randomfeeling2
         return output
 
     if "Doing" in userinput:
@@ -88,35 +98,26 @@ while go==True:
         output=feelingsprinting()
     if "How are you"in userinput:
         output=feelingsprinting()   
+
 #who
     who=["I am Gary, your personal assistant. ","This is Gary, your pal. "]
-    if "you" in userinput:
-        randomwho = random.choice(who)
-        output=randomwho
-
-    if "You" in userinput:
-        randomwho = random.choice(who)
-        output=randomwho
+    checkwholist=0
+    wholist=["you","You","who are you","Who are you"]
+    for x in wholist:
+        checkwho=wholist[checkwholist]
+        if checkwho in userinput:
+            randomwho = random.choice(who)
+            output=randomwho
+        checkwholist=checkwholist+1
  
-#leave
-    checkleavelist=0
-    leavelist=["leave","exit","sleep","goodbye","bye","Bye","Sleep","shut","Shut"]
-    for x in leavelist:
-        checkleave=leavelist[checkleavelist]
-        if checkleave in userinput:
-            output="Bye and have a nice day!"
-            go=False
-        checkleavelist=checkleavelist+1
-
 #joke
-    if "joke" in userinput:
-        itisajoke=True
-    if "Joke" in userinput:
-        itisajoke=True
-    if "Jokes" in userinput:
-        itisajoke=True
-    if "jokes" in userinput:
-        itisajoke=True
+    checkjokelist=0
+    jokelist=["joke","Jokes","Joke","Jokes"]
+    for x in jokelist:
+        checkjoke=jokelist[checkjokelist]
+        if checkjoke in userinput:
+            itisajoke=True
+        checkjokelist=checkjokelist+1
 
     if itisajoke==True:
         jokesquestions=["Why was Cinderealla so bad at Soccer?","What do you call a fish without an eye?"]
@@ -124,12 +125,13 @@ while go==True:
         randomjokenumber=random.randint(0,1)
         randomjokequestion=jokesquestions[randomjokenumber]
         randomjokeanswer=jokesanswers[randomjokenumber]
-        print(randomjokequestion)
+        print(BOLD+randomjokequestion+END)
         time.sleep(2.5)
-        print()
-        print(randomjokeanswer+" Haha!")
+        print(BOLD+randomjokeanswer+" Haha!"+END)
+#error message
     elif output=="":
-        print("Sorry the message that you inputed was not decected,pls rty daganin")
-        
-    if itisajoke==False:
+        print(BOLD+"This is a very good response, but I need more detailed information from you."+END)
+        idk=True
+#outputprinting
+    if itisajoke==False and idk==False:
         print(BOLD+output+END)
