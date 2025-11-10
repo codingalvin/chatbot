@@ -38,14 +38,14 @@ while go==True:
     idk=False
 
 #leave
-    checkleavelist=0
-    leavelist=["leave","exit","sleep","goodbye","bye","Bye","Sleep","shut","Shut"]
-    for x in leavelist:
-        checkleave=leavelist[checkleavelist]
+    checkleavecount=0
+    findleave=["leave","exit","sleep","goodbye","bye","Bye","Sleep","shut","Shut"]
+    for x in findleave:
+        checkleave=findleave[checkleavecount]
         if checkleave in userinput:
             output="Bye and have a nice day!"
             go=False
-        checkleavelist=checkleavelist+1
+        checkleavecount=checkleavecount+1
 
 #greetings
     def greetingprinting():
@@ -54,13 +54,13 @@ while go==True:
         output=randomgreeting
         return output
     
-    checkgreetinglist=0
-    greetinglist=["hi","Hi","hello","Hello","Hey","hey",]
-    for x in greetinglist:
-        checkgreeting=greetinglist[checkgreetinglist]
+    checkgreetingcount=0
+    findgreeting=["hi","Hi","hello","Hello","Hey","hey",]
+    for x in findgreeting:
+        checkgreeting=findgreeting[checkgreetingcount]
         if checkgreeting in userinput:
              output=greetingprinting()
-        checkgreetinglist=checkgreetinglist+1
+        checkgreetingcount=checkgreetingcount+1
 
 #clock
     def clockprint():
@@ -69,13 +69,13 @@ while go==True:
         output="It is currently"+currenttime +"."
         return output
 
-    checkclocklist=0
-    clocklist=["time","time"]
-    for x in clocklist:
-        checkclock=clocklist[checkclocklist]
+    checkclockcount=0
+    findclock=["time","time"]
+    for x in findclock:
+        checkclock=findclock[checkclockcount]
         if checkclock in userinput:
              output=clockprint()
-        checkclocklist=checkclocklist+1
+        checkclockcount=checkclockcount+1
 
 #feeling
     def feelingsprinting():
@@ -86,38 +86,33 @@ while go==True:
         output=randomfeeling1+", "+randomfeeling2
         return output
 
-    if "Doing" in userinput:
-        output=feelingsprinting()
-    if "doing" in userinput:
-        output=feelingsprinting()
-    if "feeling" in userinput:
-        output=feelingsprinting()
-    if "Feeling" in userinput:
-        output=feelingsprinting()
-    if "how are you" in userinput:
-        output=feelingsprinting()
-    if "How are you"in userinput:
-        output=feelingsprinting()   
+    checkfeelingcount=0
+    findfeeling=["doing","Doing","feeling","Feeling","how are you", "How are you"]
+    for x in findfeeling:
+        checkfeeling=findfeeling[checkfeelingcount]
+        if checkfeeling in userinput:
+            output=feelingsprinting()
+        checkfeelingcount=checkfeelingcount+1
 
 #who
     who=["I am Gary, your personal assistant. ","This is Gary, your pal. "]
-    checkwholist=0
-    wholist=["you","You","who are you","Who are you"]
-    for x in wholist:
-        checkwho=wholist[checkwholist]
+    checkwhocount=0
+    findwho=["you","You","who are you","Who are you"]
+    for x in findwho:
+        checkwho=findwho[checkwhocount]
         if checkwho in userinput:
             randomwho = random.choice(who)
             output=randomwho
-        checkwholist=checkwholist+1
+        checkwhocount=checkwhocount+1
  
 #joke
     checkjokelist=0
-    jokelist=["joke","Jokes","Joke","Jokes"]
-    for x in jokelist:
-        checkjoke=jokelist[checkjokelist]
+    findjoke=["joke","Jokes","Joke","Jokes"]
+    for x in findjoke:
+        checkjoke=findjoke[checkjokelist]
         if checkjoke in userinput:
             itisajoke=True
-        checkjokelist=checkjokelist+1
+        checkjokecount=checkjokecount+1
 
     if itisajoke==True:
         jokesquestions=["Why was Cinderealla so bad at Soccer?","What do you call a fish without an eye?"]
