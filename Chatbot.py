@@ -1,7 +1,7 @@
 #import libraries, set up ANSI escape and variable
 import random
 import time
-from datetime import datetime
+import datetime
 BOLD = '\033[1m'
 END = '\033[0m'
 go=True
@@ -62,7 +62,7 @@ while go==True:
              output=greetingprinting()
         checkgreetingcount=checkgreetingcount+1
 
-#clock
+#time
     def clockprint():
         now = datetime.now()
         currenttime = now.strftime("%H:%M:%S")
@@ -76,6 +76,9 @@ while go==True:
         if checkclock in userinput:
              output=clockprint()
         checkclockcount=checkclockcount+1
+
+#date
+
 
 #feeling
     def feelingsprinting():
@@ -106,10 +109,10 @@ while go==True:
         checkwhocount=checkwhocount+1
  
 #joke
-    checkjokelist=0
+    checkjokecount=0
     findjoke=["joke","Jokes","Joke","Jokes"]
     for x in findjoke:
-        checkjoke=findjoke[checkjokelist]
+        checkjoke=findjoke[checkjokecount]
         if checkjoke in userinput:
             itisajoke=True
         checkjokecount=checkjokecount+1
