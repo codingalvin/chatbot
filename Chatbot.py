@@ -1,36 +1,15 @@
 #import libraries, set up ANSI escape and variable
-import random
-import time
-import datetime
+import random,time,datetime
 BOLD = '\033[1m'
 END = '\033[0m'
 go=True
-
-def iam():
-    splitedinput=""
-    splitedinput=userinput.split()
-    if "I" in splitedinput:
-        splitedinput.remove("I")
-    if "i" in splitedinput:
-        splitedinput.remove("i")
-    if "am" in splitedinput:
-        splitedinput.remove("am")
-    if "My" in splitedinput:
-        splitedinput.remove("My")
-    if "my" in splitedinput:
-        splitedinput.remove("my")
-    if "name" in splitedinput:
-        splitedinput.remove("name")
-    if "is" in splitedinput:
-        splitedinput.remove("is")
-    print(BOLD+splitedinput+END)
-        
+  
 #startup phrase
 startgreetings=["Hello, this is Gary. Feel free to ask anything. ", "Hi!, How can I help you today? ","Welcome!, what can I do for you today? "]
 randomgreet = random.choice(startgreetings)
 print(BOLD+randomgreet+END)
 
-while go==True:
+while go:
 #var setup
     userinput=input()
     output=""
@@ -63,21 +42,36 @@ while go==True:
         checkgreetingcount=checkgreetingcount+1
 
 #time
-    def clockprint():
-        now = datetime.now()
+    def timeprint():
+        now = datetime.datetime.now()
         currenttime = now.strftime("%H:%M:%S")
-        output="It is currently"+currenttime +"."
+        output="It is currently "+currenttime +"."
         return output
 
-    checkclockcount=0
-    findclock=["time","time"]
-    for x in findclock:
-        checkclock=findclock[checkclockcount]
-        if checkclock in userinput:
-             output=clockprint()
-        checkclockcount=checkclockcount+1
+    checktimecount=0
+    findtime=["time","time"]
+    for x in findtime:
+        checktime=findtime[checktimecount]
+        if checktime in userinput:
+             output=timeprint()
+        checktimecount=checktimecount+1
 
 #date
+    def dateprint():
+        now = datetime.datetime.now()
+        currentdate = now.strftime("%A, %B %d")
+        output="Today is "+currentdate +"."
+        return output
+
+    checkdatecount=0
+    finddate=["date","date"]
+    for x in finddate:
+        checkdate=finddate[checkdatecount]
+        if checkdate in userinput:
+             output=dateprint()
+        checkdatecount=checkdatecount+1
+        
+
 
 
 #feeling
