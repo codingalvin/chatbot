@@ -119,14 +119,14 @@ while go:
             itisajoke=True
         checkjokecount=checkjokecount+1
 
-    if itisajoke==True:
+    if itisajoke:
         jokesquestions=["Why was Cinderealla so bad at Soccer?","What do you call a fish without an eye?"]
         jokesanswers=["She kept running away from the ball!","Fsh."]
         randomjokenumber=random.randint(0,1)
         randomjokequestion=jokesquestions[randomjokenumber]
         randomjokeanswer=jokesanswers[randomjokenumber]
         print(BOLD+randomjokequestion+END)
-        time.sleep(2.5)
+        time.sleep(2)
         print(BOLD+randomjokeanswer+" Haha!"+END)
 #error message
     elif output=="":
