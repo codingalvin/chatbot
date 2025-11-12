@@ -71,9 +71,6 @@ while go:
              output=dateprint()
         checkdatecount=checkdatecount+1
         
-
-
-
 #feeling
     def feelingsprinting():
         feelingvocab=["I am good","I am feeling wonderful", "I am doing amazing" ]
@@ -101,6 +98,17 @@ while go:
             randomwho = random.choice(who)
             output=randomwho
         checkwhocount=checkwhocount+1
+
+#whomadeyou
+    whomadeyou=["I am made by Alvin."]
+    checkwhomadeyoucount=0
+    findwhomadeyou=["who made you","Alvin","Who made you",]
+    for x in findwhomadeyou:
+        checkwhomadeyou=findwhomadeyou[checkwhomadeyoucount]
+        if checkwhomadeyou in userinput:
+            randomwhomadeyou = random.choice(whomadeyou)
+            output=randomwhomadeyou
+        checkwhomadeyoucount=checkwhomadeyoucount+1    
  
 #joke
     checkjokecount=0
