@@ -26,6 +26,15 @@ while go:
             go=False
         checkleavecount=checkleavecount+1
 
+#favorite
+    checkfavoritecount=0
+    findfavorite=["favorite","exit","sleep","goodbye","bye","Bye","Sleep","shut","Shut"]
+    for x in findfavorite:
+        checkfavorite=findfavorite[checkfavoritecount]
+        if checkfavorite in userinput:
+            output=""
+        checkfavoritecount=checkfavoritecount+1
+
 #greetings
     def greetingprinting():
         greetingvocab=["Hi","Hello", "What's up","How are you doing" ]
@@ -55,6 +64,17 @@ while go:
         if checktime in userinput:
              output=timeprint()
         checktimecount=checktimecount+1
+
+#whomadeyou
+    whomadeyou=["I am made by Alvin."]
+    checkwhomadeyoucount=0
+    findwhomadeyou=["who made you","Alvin","Who made you",]
+    for x in findwhomadeyou:
+        checkwhomadeyou=findwhomadeyou[checkwhomadeyoucount]
+        if checkwhomadeyou in userinput:
+            randomwhomadeyou = random.choice(whomadeyou)
+            output=randomwhomadeyou
+        checkwhomadeyoucount=checkwhomadeyoucount+1    
 
 #date
     def dateprint():
@@ -99,17 +119,6 @@ while go:
             output=randomwho
         checkwhocount=checkwhocount+1
 
-#whomadeyou
-    whomadeyou=["I am made by Alvin."]
-    checkwhomadeyoucount=0
-    findwhomadeyou=["who made you","Alvin","Who made you",]
-    for x in findwhomadeyou:
-        checkwhomadeyou=findwhomadeyou[checkwhomadeyoucount]
-        if checkwhomadeyou in userinput:
-            randomwhomadeyou = random.choice(whomadeyou)
-            output=randomwhomadeyou
-        checkwhomadeyoucount=checkwhomadeyoucount+1    
- 
 #joke
     checkjokecount=0
     findjoke=["joke","Jokes","Joke","Jokes"]
@@ -122,7 +131,7 @@ while go:
     if itisajoke:
         jokesquestions=["Why was Cinderealla so bad at Soccer?","What do you call a fish without an eye?"]
         jokesanswers=["She kept running away from the ball!","Fsh."]
-        randomjokenumber=random.randint(0,1)
+        randomjokenumber=random.randint(0,len(jokesquestions)-1)
         randomjokequestion=jokesquestions[randomjokenumber]
         randomjokeanswer=jokesanswers[randomjokenumber]
         print(BOLD+randomjokequestion+END)
