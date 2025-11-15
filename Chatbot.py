@@ -3,6 +3,7 @@ import random,time,datetime
 BOLD = '\033[1m'
 END = '\033[0m'
 go=True
+start = time.time()
   
 #startup phrase
 startgreetings=["Hello, this is Gary. Feel free to ask anything. ", "Hi!, How can I help you today? ","Welcome!, what can I do for you today? "]
@@ -32,7 +33,7 @@ while go:
     for x in findfavorite:
         checkfavorite=findfavorite[checkfavoritecount]
         if checkfavorite in userinput:
-            output=""
+            output="I d"
         checkfavoritecount=checkfavoritecount+1
 
 #greetings
@@ -144,3 +145,4 @@ while go:
 #outputprinting
     if itisajoke==False and idk==False:
         print(BOLD+output+END)
+    print("% s seconds" % (time.time() - start))
