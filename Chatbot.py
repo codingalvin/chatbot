@@ -26,24 +26,13 @@ while go:
             go=False
         checkleavecount=checkleavecount+1
 
-#interact
-    checkinteractcount=0
-    findinteract=[""]
-    for x in findinteract:
-        checkinteract=findinteract[checkinteractcount]
-        if checkinteract in userinput:
-            interactvocab=["Hi","Hello", "What's up?","How are you doing?" ]
-            randominteract = random.choice(interactvocab)
-            output=randominteract
-            checkinteractcount=checkinteractcount+1
-
-#favorite
+#favorite colour
     checkfavoritecount=0
-    findfavorite=["favorite","exit","sleep","goodbye","bye","Bye","Sleep","shut","Shut"]
+    findfavorite=["favorite colour","Favorite colour","favourite colour","Favourite colour","Favourite color", "Favorite color","favorite color","favourite color"]
     for x in findfavorite:
         checkfavorite=findfavorite[checkfavoritecount]
         if checkfavorite in userinput:
-            output="I d"
+            output="My favourite colour is blue, like the sky."
         checkfavoritecount=checkfavoritecount+1
 
 #greetings
