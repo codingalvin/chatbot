@@ -26,6 +26,17 @@ while go:
             go=False
         checkleavecount=checkleavecount+1
 
+#interact
+    checkinteractcount=0
+    findinteract=[""]
+    for x in findinteract:
+        checkinteract=findinteract[checkinteractcount]
+        if checkinteract in userinput:
+            interactvocab=["Hi","Hello", "What's up?","How are you doing?" ]
+            randominteract = random.choice(interactvocab)
+            output=randominteract
+            checkinteractcount=checkinteractcount+1
+
 #favorite
     checkfavoritecount=0
     findfavorite=["favorite","exit","sleep","goodbye","bye","Bye","Sleep","shut","Shut"]
@@ -36,18 +47,14 @@ while go:
         checkfavoritecount=checkfavoritecount+1
 
 #greetings
-    def greetingprinting():
-        greetingvocab=["Hi","Hello", "What's up","How are you doing" ]
-        randomgreeting = random.choice(greetingvocab)
-        output=randomgreeting
-        return output
-    
     checkgreetingcount=0
-    findgreeting=["hi","Hi","hello","Hello","Hey","hey",]
+    findgreeting=["hi","Hi","hello","Hello","Hey","hey"]
     for x in findgreeting:
         checkgreeting=findgreeting[checkgreetingcount]
         if checkgreeting in userinput:
-             output=greetingprinting()
+            greetingvocab=["Hi","Hello", "What's up?","How are you doing?" ]
+            randomgreeting = random.choice(greetingvocab)
+            output=randomgreeting
         checkgreetingcount=checkgreetingcount+1
 
 #time
