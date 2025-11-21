@@ -19,7 +19,7 @@ while go:
 #leave
     checkleavecount=0
     findleave=["leave","exit","sleep","goodbye","bye","Bye","Sleep","shut","Shut"]
-    for x in findleave:
+    for _ in findleave:
         checkleave=findleave[checkleavecount]
         if checkleave in userinput:
             output="Bye and have a nice day!"
@@ -29,7 +29,7 @@ while go:
 #favorite colour
     checkfavoritecount=0
     findfavorite=["favorite colour","Favorite colour","favourite colour","Favourite colour","Favourite color", "Favorite color","favorite color","favourite color"]
-    for x in findfavorite:
+    for _ in findfavorite:
         checkfavorite=findfavorite[checkfavoritecount]
         if checkfavorite in userinput:
             output="My favourite colour is blue, like the sky."
@@ -38,7 +38,7 @@ while go:
 #greetings
     checkgreetingcount=0
     findgreeting=["hi","Hi","hello","Hello","Hey","hey"]
-    for x in findgreeting:
+    for _ in findgreeting:
         checkgreeting=findgreeting[checkgreetingcount]
         if checkgreeting in userinput:
             greetingvocab=["Hi","Hello", "What's up?","How are you doing?" ]
@@ -55,7 +55,7 @@ while go:
 
     checktimecount=0
     findtime=["time","time"]
-    for x in findtime:
+    for _ in findtime:
         checktime=findtime[checktimecount]
         if checktime in userinput:
              output=timeprint()
@@ -65,7 +65,7 @@ while go:
     whomadeyou=["I am made by Alvin."]
     checkwhomadeyoucount=0
     findwhomadeyou=["who made you","Alvin","Who made you",]
-    for x in findwhomadeyou:
+    for _ in findwhomadeyou:
         checkwhomadeyou=findwhomadeyou[checkwhomadeyoucount]
         if checkwhomadeyou in userinput:
             randomwhomadeyou = random.choice(whomadeyou)
@@ -81,7 +81,7 @@ while go:
 
     checkdatecount=0
     finddate=["date","date"]
-    for x in finddate:
+    for _ in finddate:
         checkdate=finddate[checkdatecount]
         if checkdate in userinput:
              output=dateprint()
@@ -98,7 +98,7 @@ while go:
 
     checkfeelingcount=0
     findfeeling=["doing","Doing","feeling","Feeling","how are you", "How are you"]
-    for x in findfeeling:
+    for _ in findfeeling:
         checkfeeling=findfeeling[checkfeelingcount]
         if checkfeeling in userinput:
             output=feelingsprinting()
@@ -108,7 +108,7 @@ while go:
     who=["I am Gary, your personal assistant. ","This is Gary, your pal. "]
     checkwhocount=0
     findwho=["you","You","who are you","Who are you"]
-    for x in findwho:
+    for _ in findwho:
         checkwho=findwho[checkwhocount]
         if checkwho in userinput:
             randomwho = random.choice(who)
@@ -118,7 +118,7 @@ while go:
 #joke
     checkjokecount=0
     findjoke=["joke","Jokes","Joke","Jokes"]
-    for x in findjoke:
+    for _ in findjoke:
         checkjoke=findjoke[checkjokecount]
         if checkjoke in userinput:
             itisajoke=True
