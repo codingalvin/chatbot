@@ -6,8 +6,7 @@ go=True
   
 #startup phrase
 startgreetings=["Hello, this is Gary. Feel free to ask anything. ", "Hi!, How can I help you today? ","Welcome!, what can I do for you today? "]
-randomgreet = random.choice(startgreetings)
-print(BOLD+randomgreet+END)
+print(BOLD+random.choice(startgreetings)+END)
 
 while go:
 #var setup
@@ -20,8 +19,7 @@ while go:
     checkleavecount=0
     findleave=["leave","exit","sleep","goodbye","bye","Bye","Sleep","shut","Shut"]
     for _ in findleave:
-        checkleave=findleave[checkleavecount]
-        if checkleave in userinput:
+        if findleave[checkleavecount] in userinput:
             output="Bye and have a nice day!"
             go=False
         checkleavecount=checkleavecount+1
@@ -30,8 +28,7 @@ while go:
     checkfavoritecount=0
     findfavorite=["favorite colour","Favorite colour","favourite colour","Favourite colour","Favourite color", "Favorite color","favorite color","favourite color"]
     for _ in findfavorite:
-        checkfavorite=findfavorite[checkfavoritecount]
-        if checkfavorite in userinput:
+        if findfavorite[checkfavoritecount] in userinput:
             output="My favourite colour is blue, like the sky."
         checkfavoritecount=checkfavoritecount+1
 
@@ -39,11 +36,9 @@ while go:
     checkgreetingcount=0
     findgreeting=["hi","Hi","hello","Hello","Hey","hey"]
     for _ in findgreeting:
-        checkgreeting=findgreeting[checkgreetingcount]
-        if checkgreeting in userinput:
+        if findgreeting[checkgreetingcount] in userinput:
             greetingvocab=["Hi","Hello", "What's up?","How are you doing?" ]
-            randomgreeting = random.choice(greetingvocab)
-            output=randomgreeting
+            output=random.choice(greetingvocab)
         checkgreetingcount=checkgreetingcount+1
 
 #time
@@ -56,8 +51,7 @@ while go:
     checktimecount=0
     findtime=["time","time"]
     for _ in findtime:
-        checktime=findtime[checktimecount]
-        if checktime in userinput:
+        if findtime[checktimecount] in userinput:
              output=timeprint()
         checktimecount=checktimecount+1
 
@@ -66,10 +60,8 @@ while go:
     checkwhomadeyoucount=0
     findwhomadeyou=["who made you","Alvin","Who made you",]
     for _ in findwhomadeyou:
-        checkwhomadeyou=findwhomadeyou[checkwhomadeyoucount]
-        if checkwhomadeyou in userinput:
-            randomwhomadeyou = random.choice(whomadeyou)
-            output=randomwhomadeyou
+        if findwhomadeyou[checkwhomadeyoucount] in userinput:
+            output=random.choice(whomadeyou)
         checkwhomadeyoucount=checkwhomadeyoucount+1    
 
 #date
@@ -99,8 +91,7 @@ while go:
     checkfeelingcount=0
     findfeeling=["doing","Doing","feeling","Feeling","how are you", "How are you"]
     for _ in findfeeling:
-        checkfeeling=findfeeling[checkfeelingcount]
-        if checkfeeling in userinput:
+        if findfeeling[checkfeelingcount] in userinput:
             output=feelingsprinting()
         checkfeelingcount=checkfeelingcount+1
 
@@ -109,10 +100,8 @@ while go:
     checkwhocount=0
     findwho=["you","You","who are you","Who are you"]
     for _ in findwho:
-        checkwho=findwho[checkwhocount]
-        if checkwho in userinput:
-            randomwho = random.choice(who)
-            output=randomwho
+        if findwho[checkwhocount] in userinput:
+            output=random.choice(who)
         checkwhocount=checkwhocount+1
 
 #joke
@@ -127,12 +116,10 @@ while go:
     if itisajoke:
         jokesquestions=["Why was Cinderealla so bad at Soccer?","What do you call a fish without an eye?"]
         jokesanswers=["She kept running away from the ball!","Fsh."]
-        randomjokenumber=random.randint(0,len(jokesquestions)-1)
-        randomjokequestion=jokesquestions[randomjokenumber]
-        randomjokeanswer=jokesanswers[randomjokenumber]
-        print(BOLD+randomjokequestion+END)
+        randomjokenumber=random.randint(0,len(jokesquestions)-1)#subtracted by 1
+        print(BOLD+jokesquestions[randomjokenumber]+END)
         time.sleep(2)
-        print(BOLD+randomjokeanswer+" Haha!"+END)
+        print(BOLD+jokesanswers[randomjokenumber]+" Haha!"+END)
 #error message
     elif output=="":
         print(BOLD+"This is a very good response, but I need more detailed information from you."+END)
