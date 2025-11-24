@@ -43,8 +43,7 @@ while go:
 
 #time
     def timeprint():
-        now = datetime.datetime.now()
-        currenttime = now.strftime("%H:%M:%S")
+        currenttime = datetime.datetime.now().strftime("%H:%M:%S")
         output="It is currently "+currenttime +"."
         return output
 
