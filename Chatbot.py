@@ -65,8 +65,7 @@ while go:
 
 #date
     def dateprint():
-        now = datetime.datetime.now()
-        currentdate = now.strftime("%A, %B %d")
+        currentdate = datetime.datetime.now().strftime("%A, %B %d")
         output="Today is "+currentdate +"."
         return output
 
@@ -95,14 +94,26 @@ while go:
         checkfeelingcount=checkfeelingcount+1
 
 #who
-    who=["I am Gary, your personal assistant. ","This is Gary, your pal. "]
     checkwhocount=0
     findwho=["you","You","who are you","Who are you"]
     for _ in findwho:
         if findwho[checkwhocount] in userinput:
+            who=["I am Gary, your personal assistant. ","This is Gary, your pal. "]
             output=random.choice(who)
         checkwhocount=checkwhocount+1
 
+#username
+    usersentence=userinput.split(" ")
+    checkusernamecount=0
+    findusername=["my","name","is"]
+    
+    for _ in findusername:
+        if findusername[checkusernamecount] in userinput:
+            usersentence.remove(findusername[checkusernamecount])
+        checkusernamecount=checkusernamecount+1
+
+    if len(usersentence) == 1:
+        username=usersentence[0]
 #joke
     checkjokecount=0
     findjoke=["joke","Jokes","Joke","Jokes"]
