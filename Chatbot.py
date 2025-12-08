@@ -24,6 +24,16 @@ while go:
             go=False
         checkleavecount=checkleavecount+1
 
+#thank
+    checkthankcount=0
+    findthank=["thank","Thank"]
+    for _ in findthank:
+        if findthank[checkthankcount] in userinput:
+            thankvocab=["You are very welcome"]
+            output=random.choice(thankvocab)
+            go=False
+        checkthankcount=checkthankcount+1
+
 #favorite colour
     checkfavoritecount=0
     findfavorite=["favorite colour","Favorite colour","favourite colour","Favourite colour","Favourite color", "Favorite color","favorite color","favourite color"]
