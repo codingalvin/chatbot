@@ -1,7 +1,6 @@
 #import libraries, set up ANSI escape and variable
 import random,time,datetime
-BOLD = '\033[1m'
-END = '\033[0m'
+BOLD,END = '\033[1m','\033[0m'
 go=True
   
 #startup phrase
@@ -11,9 +10,7 @@ print(BOLD+random.choice(startgreetings)+END)
 while go:
 #var setup
     userinput=input()
-    output=""
-    itisajoke=False
-    idk=False
+    itisajoke,idk,output=False,False,""
 
 #leave
     checkleavecount=0
@@ -29,7 +26,7 @@ while go:
     findthank=["thank","Thank"]
     for _ in findthank:
         if findthank[checkthankcount] in userinput:
-            thankvocab=["You are very welcome"]
+            thankvocab=["You are very welcome."]
             output=random.choice(thankvocab)
             go=False
         checkthankcount=checkthankcount+1
