@@ -44,7 +44,7 @@ while go:
     findgreeting=["hi","Hi","hello","Hello","Hey","hey"]
     for _ in findgreeting:
         if findgreeting[checkgreetingcount] in userinput:
-            greetingvocab=["Hi","Hello", "What's up?","How are you doing?" ]
+            greetingvocab=["Hi, how can I help you?","Hello, ask me anything.", "What's up?","How are you doing?" ]
             output=random.choice(greetingvocab)
         checkgreetingcount=checkgreetingcount+1
 
@@ -94,7 +94,7 @@ while go:
         return output
 
     checkfeelingcount=0
-    findfeeling=["doing","Doing","feeling","Feeling","how are you", "How are you"]
+    findfeeling=["how are you doing","How are you doing","how are you", "How are you"]
     for _ in findfeeling:
         if findfeeling[checkfeelingcount] in userinput:
             output=feelingsprinting()
@@ -133,7 +133,7 @@ while go:
     if itisajoke:
         jokesquestions=["Why was Cinderealla so bad at Soccer?","What do you call a fish without an eye?"]
         jokesanswers=["She kept running away from the ball!","Fsh."]
-        randomjokenumber=random.randint(0,len(jokesquestions)-1)#subtracted by 1
+        randomjokenumber=random.randint(0,len(jokesquestions)-1)#subtracted by 1, beacuse of indexing
         print(BOLD+jokesquestions[randomjokenumber]+END)
         time.sleep(2)
         print(BOLD+jokesanswers[randomjokenumber]+" Haha!"+END)
